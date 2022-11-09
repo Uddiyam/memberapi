@@ -1,0 +1,21 @@
+.Btn{
+    width: 30%;
+}
+
+.Container{
+    padding: 3%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.Text{
+    font-size: larger;
+    margin-bottom: 3%;
+}
+
+.Timer {
+    display: inline-block;
+    color: #F24E1E;
+    margin-bottom: 2%;
+}
