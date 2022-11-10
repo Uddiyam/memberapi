@@ -77,13 +77,14 @@ export default function Login() {
               autoComplete="off"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <div className={styles.SignUp}>
+          </Form.Group>
+          <div className={styles.SignUp}>
+            <Button className={styles.Btn} variant="info">
               <Link to="/SignUp" className={styles.LinkSignUp}>
                 회원가입
               </Link>
-            </div>
-          </Form.Group>
-
+            </Button>
+          </div>
           <Button className={styles.Btn} variant="primary" onClick={sendData}>
             로그인
           </Button>

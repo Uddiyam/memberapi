@@ -12,6 +12,7 @@ export default function SignUp() {
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [passwordTF, setPasswordTF] = useState(false);
   const [idCheck, setIdCheck] = useState(false);
+  const [btnTF, setBtnTF] = useState(false);
   let navigate = useNavigate();
 
   const idConfirm = async () => {
@@ -19,9 +20,10 @@ export default function SignUp() {
       console.log(res);
       setResult(res.data.data[0]);
       {
-        res.data.data[0] ? alert("중복") : setIdCheck(true);
+        res.data.data[0] ? setIdCheck(false) : setIdCheck(true);
       }
     });
+    setBtnTF(true);
   };
 
   const sendData = async () => {
@@ -49,6 +51,16 @@ export default function SignUp() {
           <Button className={styles.Btn} variant="primary" onClick={idConfirm}>
             중복확인
           </Button>
+
+          <div
+            className={styles.InfoText}
+            style={{ color: idCheck ? "green" : "red" }}
+          >
+            {btnTF &&
+              id.length > 0 &&
+              (idCheck ? "사용가능한 id 입니다" : "이미 존재하는 id 입니다")}
+            {btnTF && id.length === 0 && "1글자 이상 입력해주세요"}
+          </div>
         </Form.Group>
 
         <Form.Group className={styles.PasswordWrap} controlId="formBasicEmail">
@@ -86,19 +98,22 @@ export default function SignUp() {
             }
           />
 
-          {passwordConfirm.length > 0 &&
-            password.length > 0 &&
-            (passwordTF ? (
-              <p>비밀번호 일치</p>
-            ) : (
-              <p>비밀번호가 일치하지 않습니다.</p>
-            ))}
+          <p
+            className={styles.PasswordTF}
+            style={{ color: passwordTF ? "green" : "red" }}
+          >
+            {passwordConfirm.length > 0 &&
+              password.length > 0 &&
+              (passwordTF
+                ? "비밀번호가 일치합니다"
+                : "비밀번호가 일치하지 않습니다")}
+          </p>
         </Form.Group>
         {console.log(!(passwordTF && idCheck))}
         <Button
           className={styles.ResBtn}
           variant="primary"
-          disabled={!(passwordTF && idCheck)}
+          disabled={!(passwordTF && idCheck && id.length > 0)}
           onClick={sendData}
         >
           가입

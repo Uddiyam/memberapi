@@ -37,27 +37,29 @@
     margin-top: 15%;
     border-radius: 4px;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.07);
+    font-weight: bold;
 }
 
 .SignUp{
-    text-align: center;
     margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 .Btn{
     margin-left: 30%;
     width: 40%;
+    font-weight: bold;
 }
 
-.Link{
+.LinkSignUp{
     text-decoration: none;
     color: white;
-    font-size: larger;
+    font-size: medium;
 }
-.Link:hover{
+.LinkSignUp:hover{
     text-decoration: none;
     color: white;
-    font-size: larger;
+    font-size: medium;
 }
 
 .FalseEmail{

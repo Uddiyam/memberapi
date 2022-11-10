@@ -63,3 +63,13 @@
     margin-left: 20%;
     margin-top: 3%;
 }
+
+.InfoText{
+    margin-top: 1%;
+    font-weight: bold;
+}
+
+.PasswordTF{
+    margin-top: 1%;
+    font-weight: bold;
+}

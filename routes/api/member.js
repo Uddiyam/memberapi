@@ -5,9 +5,6 @@ const router = express.Router();
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 
-const session = require("express-session");
-const MemoryStore = require("memorystore")(session);
-
 router.get("/", async (req, res) => {
   const member = await mysql.query("memberList");
   console.log(member);
@@ -116,10 +113,6 @@ router.post("/checkToken", async (req, res) => {
         message: "success!",
         data: id,
       });
-});
-
-router.post("/logout", async (req, res) => {
-  console.log(req.body);
 });
 
 router.put("/update", async (req, res) => {

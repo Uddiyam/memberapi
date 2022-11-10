@@ -59,7 +59,7 @@ export default function Home() {
       });
   }, [sec]);
 
-  const LogOut = async () => {
+  const LogOut = () => {
     sessionStorage.removeItem("userToken");
     TimeReset();
     navigate("/");
@@ -70,7 +70,7 @@ export default function Home() {
         00:{min < 10 ? `0${min}` : min}:{sec < 10 ? `0${sec}` : sec}
       </div>
       <div className={styles.Text}>
-        <b>{user_id}</b> 님 안녕하세요.
+        <b>{user_id}</b> 님 안녕하세요
       </div>
       <Button className={styles.Btn} variant="primary" onClick={LogOut}>
         로그아웃
